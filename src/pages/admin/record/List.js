@@ -1,0 +1,1067 @@
+import React from 'react'
+import {Card,Table,Button} from 'antd'
+
+const dataSource=[{
+    id:1,						
+    account1:'4455aa',
+    time:'2020.9.1',
+    money:2400,
+    canal:'手机银行',
+    address1:'辽宁',
+    account2:'11334a',
+    address2:'吉林',
+    judge:0
+},{
+    id:2,						
+    account1:'3332as',
+    time:'2020.9.1',
+    money:12000,
+    canal:'手机银行',
+    address1:'兰州',
+    account2:'ff2234',
+    address2:'兰州',
+    judge:0
+},{
+    id:3,						
+    account1:'qqcc12',
+    time:'2020.9.1',
+    money:4000,
+    canal:'柜台',
+    address1:'郑州',
+    account2:'34eeerr',
+    address2:'郑州',
+    judge:0
+},{
+    id:4,						
+    account1:'aabbcc',
+    time:'2020.9.2',
+    money:100000,
+    canal:'网上银行',
+    address1:'北京',
+    account2:'1122s5',
+    address2:'上海',
+    judge:1
+},{
+    id:5,						
+    account1:'eeaa23',
+    time:'2020.9.2',
+    money:8000,
+    canal:'网上银行',
+    address1:'重庆',
+    account2:'55678a',
+    address2:'海南',
+    judge:0
+},{
+    id:6,						
+    account1:'hjk123',
+    time:'2020.9.2',
+    money:4200,
+    canal:'手机银行',
+    address1:'延安',
+    account2:'der567',
+    address2:'延安',
+    judge:0
+},{
+    id:7,						
+    account1:'55bb23',
+    time:'2020.9.2',
+    money:10000,
+    canal:'柜台',
+    address1:'北京',
+    account2:'33000p',
+    address2:'石家庄',
+    judge:0
+},{
+    id:8,						
+    account1:'pppppp',
+    time:'2020.9.3',
+    money:450000,
+    canal:'手机银行',
+    address1:'香港',
+    account2:'44455m',
+    address2:'黑龙江',
+    judge:1
+},{
+    id:9,						
+    account1:'pppppp',
+    time:'2020.9.3',
+    money:230000,
+    canal:'手机银行',
+    address1:'香港',
+    account2:'439mms',
+    address2:'上海',
+    judge:1
+},{
+    id:10,						
+    account1:'qqvvd3',
+    time:'2020.9.3',
+    money:7400,
+    canal:'柜台',
+    address1:'武汉',
+    account2:'0202ws',
+    address2:'十堰',
+    judge:0
+},{
+    id:11,						
+    account1:'ssbb66',
+    time:'2020.9.3',
+    money:2000,
+    canal:'柜台',
+    address1:'香港',
+    account2:'44555s',
+    address2:'徐州',
+    judge:0
+},{
+    id:12,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'334m45',
+    address2:'扬州',
+    judge:0
+},{
+    id:13,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'eedd4f',
+    address2:'扬州',
+    judge:0
+},{
+    id:14,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'uiojk4',
+    address2:'扬州',
+    judge:0
+},{
+    id:15,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'tdcv78',
+    address2:'扬州',
+    judge:0
+},{
+    id:16,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'asrtyu',
+    address2:'扬州',
+    judge:0
+},{
+    id:17,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'vddehy',
+    address2:'扬州',
+    judge:0
+},{
+    id:18,						
+    account1:'77dd44',
+    time:'2020.9.4',
+    money:1000,
+    canal:'网上银行',
+    address1:'扬州',
+    account2:'zc69hf',
+    address2:'扬州',
+    judge:0
+},{
+    id:19,						
+    account1:'aabbcc',
+    time:'2020.9.5',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:1
+},{
+    id:20,						
+    account1:'4dsafr',
+    time:'2020.9.5',
+    money:3300,
+    canal:'柜台',
+    address1:'唐山',
+    account2:'mmmsdd',
+    address2:'秦皇岛',
+    judge:0
+},{
+    id:21,						
+    account1:'eedkaq',
+    time:'2020.9.5',
+    money:4900,
+    canal:'手机银行',
+    address1:'六安',
+    account2:'dfg78',
+    address2:'六安',
+    judge:0
+},{
+    id:22,						
+    account1:'jakdhe',
+    time:'2020.9.5',
+    money:100000,
+    canal:'手机银行',
+    address1:'黄山',
+    account2:'45yyts',
+    address2:'黄山',
+    judge:0
+},{
+    id:23,						
+    account1:'xxxddd',
+    time:'2020.9.5',
+    money:300000,
+    canal:'网上银行',
+    address1:'丹麦',
+    account2:'777ffg',
+    address2:'上海',
+    judge:1
+},{
+    id:24,						
+    account1:'aabbcc',
+    time:'2020.9.6',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:25,						
+    account1:'aabbcc',
+    time:'2020.9.6',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:26,						
+    account1:'aabbcc',
+    time:'2020.9.6',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:27,						
+    account1:'aabbcc',
+    time:'2020.9.7',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:28,						
+    account1:'aabbcc',
+    time:'2020.9.7',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:29,						
+    account1:'aabbcc',
+    time:'2020.9.7',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:30,						
+    account1:'aabbcc',
+    time:'2020.9.7',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:31,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:32,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:33,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:35,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:34,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:99,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+},{
+    id:100,						
+    account1:'aabbcc',
+    time:'2020.9.8',
+    money:100000,
+    canal:'电话银行',
+    address1:'无锡',
+    account2:'mk90ol',
+    address2:'天津',
+    judge:0
+}]
+
+function List() {
+    const columns=[{
+        key:'id',
+        width:1,
+        align:'center'
+        
+    },{
+        title:'用户账号',
+        dataIndex:'account1' ,
+        width:100,
+        align:'center' 
+    },{
+        title:'交易时间',
+        dataIndex:'time',
+        width:100,
+        align:'center'
+    },{
+        title:'交易金额',
+        dataIndex:'money',
+        width:100,
+        align:'center'    
+    },{
+        title:'转账渠道',
+        dataIndex: 'canal',
+        width:100,
+        align:'center'    
+    },{
+        title:'汇款人地址',
+        dataIndex:'address1' ,
+        width:100,
+        align:'center'    
+    },{
+        title:'收款人账号',
+        dataIndex:'account2' ,
+        width:100,
+        align:'center'   
+    },{
+        title:'收款人地址',
+        dataIndex:'address2',
+        width:100,
+        align:'center' 
+    },{
+        title:'是否欺诈',
+        dataIndex:'judge',
+        width:100,
+        align:'center'
+    }]
+    return (
+        <Card title="交易信息"
+        extra={
+            <Button type="primary" size="small">
+                更新
+            </Button>
+        }>
+            <Table columns={columns} 
+            bordered  
+            dataSource={dataSource}/>
+        </Card>
+    )
+}
+
+export default List
